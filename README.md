@@ -7,7 +7,7 @@ Play Economy Identity microservice
 MacOS
 
 ```shell
-version='1.0.3'
+version='1.0.4'
 owner='iga1dotnetmicroservices'
 gh_pat='[PAT HERE]'
 
@@ -19,7 +19,7 @@ dotnet nuget push ../packages/Play.Identity.Contracts.$version.nupkg --api-key $
 Microsoft Powershell
 
 ```powershell
-$version='1.0.3'
+$version='1.0.4'
 $owner='iga1dotnetmicroservices'
 $gh_pat='[PAT HERE]'
 
@@ -61,5 +61,7 @@ Windows Shell
 ```powershell
 $adminPass='[PASSWORD HERE]'
 $cosmosDbConnString='[CONN STRING HERE]'
-docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnString -e RabbitMQSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network playinfra_default play.identity:$version
+$serviceBusConnString='[CONN STRING HERE]'
+
+docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnString -e ServiceBusSettings__ConnectionString=$serviceBusConnString -e ServiceSettings__MessageBroker="SERVICEBUS" -e IdentitySettings__AdminUserPassword=$adminPass play.identity:$version
 ```
