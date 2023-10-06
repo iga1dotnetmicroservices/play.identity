@@ -7,7 +7,7 @@ Play Economy Identity microservice
 MacOS
 
 ```shell
-version='1.0.2'
+version='1.0.3'
 owner='iga1dotnetmicroservices'
 gh_pat='[PAT HERE]'
 
@@ -19,7 +19,7 @@ dotnet nuget push ../packages/Play.Identity.Contracts.$version.nupkg --api-key $
 Microsoft Powershell
 
 ```powershell
-$version='1.0.2'
+$version='1.0.3'
 $owner='iga1dotnetmicroservices'
 $gh_pat='[PAT HERE]'
 
@@ -52,12 +52,14 @@ MacOS
 
 ```shell
 adminPass='[PASSWORD HERE]'
-docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__Host=mongo -e RabbitMQSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network playinfra_default play.identity:$version
+cosmosDbConnString='[CONN STRING HERE]'
+docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnString -e RabbitMQSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network playinfra_default play.identity:$version
 ```
 
 Windows Shell
 
 ```powershell
 $adminPass='[PASSWORD HERE]'
-docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__Host=mongo -e RabbitMQSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network playinfra_default play.identity:$version
+$cosmosDbConnString='[CONN STRING HERE]'
+docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnString -e RabbitMQSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network playinfra_default play.identity:$version
 ```

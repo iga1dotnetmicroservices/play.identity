@@ -3,7 +3,7 @@ using Play.Identity.Service.Entities;
 
 namespace Play.Identity.Service
 {
-    public static class Extensions 
+    public static class Extensions
     {
         public static UserDto AsDto(this ApplicationUser user)
         {
