@@ -116,3 +116,17 @@ Windows
 ```powershell
 kubectl create secret generic identity-secrets --from-literal=cosmosdb-connectionstring=$cosmosDbConnString --from-literal=servicebus-connectionstring=$serviceBusConnString --from-literal=admin-password=$adminPass -n $namespace
 ```
+
+## Create the Kubernetes pod
+
+MacOS
+
+```shell
+kubectl apply -f ./kubernetes/identity.yaml -n $namespace
+```
+
+Windows
+
+```powershell
+kubectl apply -f ./kubernetes/identity.yaml -n $namespace
+```
