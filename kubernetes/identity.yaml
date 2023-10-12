@@ -22,7 +22,7 @@ spec:
                 secretKeyRef:
                   name: identity-secrets
                   key: cosmosdb-connectionstring
-            - name: ServiceBusSettings__ConnectionStringgit s
+            - name: ServiceBusSettings__ConnectionString
               valueFrom:
                 secretKeyRef:
                   name: identity-secrets

@@ -55,7 +55,7 @@ MacOS
 ```shell
 adminPass='[PASSWORD HERE]'
 cosmosDbConnString='[CONN STRING HERE]'
-docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnString -e RabbitMQSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network playinfra_default play.identity:$version
+docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnString -e ServiceBusSettings__ConnectionString=$serviceBusConnString -e IdentitySettings__AdminUserPassword=$adminPass --network playinfra_default play.identity:$version
 ```
 
 Windows
