@@ -86,3 +86,33 @@ $appname='iga1playeconomy'
 az acr login --name $appname
 docker push "$appname.azurecr.io/play.identity:$version"
 ```
+
+## Create the Kubernetes namespace
+
+MacOS
+
+```shell
+namespace='identity'
+kubectl create namespace $namespace
+```
+
+Windows
+
+```powershell
+$namespace='identity'
+kubectl create namespace $namespace
+```
+
+## Create the Kubernetes secrets
+
+MacOS
+
+```shell
+kubectl create secret generic identity-secrets --from-literal=cosmosdb-connectionstring=$cosmosDbConnString --from-literal=servicebus-connectionstring=$serviceBusConnString --from-literal=admin-password=$adminPass -n $namespace
+```
+
+Windows
+
+```powershell
+kubectl create secret generic identity-secrets --from-literal=cosmosdb-connectionstring=$cosmosDbConnString --from-literal=servicebus-connectionstring=$serviceBusConnString --from-literal=admin-password=$adminPass -n $namespace
+```
