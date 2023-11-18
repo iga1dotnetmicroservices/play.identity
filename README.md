@@ -173,3 +173,8 @@ $IDENTITY_CLIENT_ID=az identity show -g $appname -n $namespace --query clientId 
 az keyvault set-policy -n $appname --secret-permissions get list --spn $IDENTITY_CLIENT_ID
 ```
 
+## Create the signing certificate 
+
+```powershell
+kubectl apply -f ./kubernetes/signing-cer.yaml -n $namespace
+```
