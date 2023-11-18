@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using IdentityServer4.Models;
 
-namespace Play.Identity.Service.Settings 
+namespace Play.Identity.Service.Settings
 {
     public class IdentityServerSettings
     {
