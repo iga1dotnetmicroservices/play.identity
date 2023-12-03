@@ -77,7 +77,7 @@ jobs:
         # List of secrets to expose to the build (e.g., key=string, GIT_AUTH_TOKEN=mytoken)
         secrets: |
           "GH_OWNER=${{github.repository_owner}}"
-          "GH_PATH=${{secrets.GH_PAT}}"
+          "GH_PAT=${{secrets.GH_PAT}}"
         # List of tags
         tags: ${{env.APP_NAME}}.azurecr.io/play.identity:${{ needs.generate-version.outputs.new_version }}
           
