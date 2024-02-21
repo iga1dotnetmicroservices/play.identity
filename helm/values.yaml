@@ -8,8 +8,8 @@ envVariables:
   IdentitySettings__PathBase: /identity-svc
   IdentitySettings__CertificateCerFilePath: "/certificates/certificate.crt"
   IdentitySettings__CertificateKeyFilePath: "/certificates/certificate.key"
-  IdentityServerSettings__Clients__0__RedirectUris__0: https://iga1playeconomy.eastus.cloudapp.azure.com/authentication/login-callback
-  IdentityServerSettings__Clients__0__PostLogoutRedirectUris__0: https://iga1playeconomy.eastus.cloudapp.azure.com/authentication/logout-callback
+  IdentityServerSettings__Clients__0__RedirectUris__0: https://iga1dotapprentice.eastus.cloudapp.azure.com/authentication/login-callback
+  IdentityServerSettings__Clients__0__PostLogoutRedirectUris__0: https://iga1dotapprentice.eastus.cloudapp.azure.com/authentication/logout-callback
 
 resources:
   limits:
@@ -38,4 +38,4 @@ service:
 
 certificate:
   secretName: signing-cert
-  hostname: iga1playeconomy.eastus.cloudapp.azure.com
+  hostname: iga1dotapprentice.eastus.cloudapp.azure.com
