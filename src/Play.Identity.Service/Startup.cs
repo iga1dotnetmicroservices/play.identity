@@ -15,6 +15,7 @@ using MongoDB.Bson.Serialization.Serializers;
 using Play.Common.HealthChecks;
 using Play.Common.Logging;
 using Play.Common.MassTransit;
+using Play.Common.OpenTelementry;
 using Play.Common.Settings;
 using Play.Identity.Service.Entities;
 using Play.Identity.Service.Exceptions;
@@ -79,7 +80,8 @@ namespace Play.Identity.Service
                 options.KnownProxies.Clear();
             });
 
-            services.AddSeqLogging(Configuration);
+            services.AddSeqLogging(Configuration)
+                    .AddTracing(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
